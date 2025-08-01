@@ -1,16 +1,18 @@
 import 'dart:convert';
 import 'package:netflix/Object/Movie.dart' show Movie;
 import 'package:http/http.dart' as http;
+import "package:flutter_dotenv/flutter_dotenv.dart";
 
 Future<List> fetchMovies(http.Client client) async {
+  final String apiKey = dotenv.env['API_KEY'] ?? '';
   final responsePopular = await client.get(Uri.parse(
-      'https://api.themoviedb.org/3/movie/popular?api_key=23f1e4dc64dcdfe853dd2aee44cf082d'));
+      'https://api.themoviedb.org/3/movie/popular?api_key=$apiKey'));
   final responseNowPlaying = await client.get(Uri.parse(
-      'https://api.themoviedb.org/3/movie/now_playing?api_key=23f1e4dc64dcdfe853dd2aee44cf082d'));
+      'https://api.themoviedb.org/3/movie/now_playing?api_key=$apiKey'));
   final responseTopRated = await client.get(Uri.parse(
-      'https://api.themoviedb.org/3/movie/top_rated?api_key=23f1e4dc64dcdfe853dd2aee44cf082d'));
+      'https://api.themoviedb.org/3/movie/top_rated?api_key=$apiKey'));
   final responseUpComing = await client.get(Uri.parse(
-      'https://api.themoviedb.org/3/movie/upcoming?api_key=23f1e4dc64dcdfe853dd2aee44cf082d'));
+      'https://api.themoviedb.org/3/movie/upcoming?api_key=$apiKey'));
 
   if (responsePopular.statusCode == 200 &&
       responseNowPlaying.statusCode == 200 &&

@@ -12,7 +12,7 @@ class LoadingView extends StatelessWidget {
           children: [
             CircularProgressIndicator(),
             SizedBox(height: 10),
-            Text("LOADING... WAIT...")
+            Text("ĐANG TẢI... CHỜ...")
           ],
         ),
       ),

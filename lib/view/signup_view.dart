@@ -39,13 +39,13 @@ class SignUpView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.0),
                     borderSide: BorderSide.none,
                   ),
-                  hintText: "Email",
+                  hintText: "Nhập Gmail",
                   fillColor: const Color.fromRGBO(51, 51, 51, 1),
                   filled: true,
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter some text";
+                    return "Không được để trống";
                   }
                   return null;
                 },
@@ -62,13 +62,13 @@ class SignUpView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.0),
                     borderSide: BorderSide.none,
                   ),
-                  hintText: "Your name",
+                  hintText: "Nhập tên của bạn",
                   fillColor: const Color.fromRGBO(51, 51, 51, 1),
                   filled: true,
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter some text";
+                    return "Không được để trống";
                   }
                   return null;
                 },
@@ -85,13 +85,13 @@ class SignUpView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.0),
                     borderSide: BorderSide.none,
                   ),
-                  hintText: "Your password",
+                  hintText: "Nhập mật khẩu",
                   fillColor: const Color.fromRGBO(51, 51, 51, 1),
                   filled: true,
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter some text";
+                    return "Không được để trống";
                   }
                   return null;
                 },
@@ -108,13 +108,13 @@ class SignUpView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.0),
                     borderSide: BorderSide.none,
                   ),
-                  hintText: "Enter password again",
+                  hintText: "Nhập lại mật khẩu",
                   fillColor: const Color.fromRGBO(51, 51, 51, 1),
                   filled: true,
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter some text";
+                    return "Không được để trống";
                   }
                   return null;
                 },
@@ -156,7 +156,7 @@ class SignUpView extends StatelessWidget {
                             minimumSize: const Size(0, 50),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8.0))),
-                        child: const Text("Sign Up")),
+                        child: const Text("Đăng kí")),
                   ),
                 ],
               ),
@@ -164,7 +164,7 @@ class SignUpView extends StatelessWidget {
               Row(
                 children: [
                   const Text(
-                    "Already account?",
+                    "Đã có tài khoản?",
                     style: TextStyle(color: Color.fromRGBO(116, 116, 116, 1.0)),
                   ),
                   TextButton(
@@ -172,7 +172,7 @@ class SignUpView extends StatelessWidget {
                         Navigator.pop(context);
                       },
                       child: const Text(
-                        "Sign in now",
+                        "Đăng nhập ngay",
                         style: TextStyle(color: Colors.white),
                       ))
                 ],

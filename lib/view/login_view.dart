@@ -21,7 +21,7 @@ class LoginView extends StatelessWidget {
               Container(
                 alignment: Alignment.centerLeft,
                 child: const Text(
-                  'Sign In',
+                  'Đăng nhập',
                   style: TextStyle(fontSize: 60),
                 ),
               ),
@@ -37,13 +37,13 @@ class LoginView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.0),
                     borderSide: BorderSide.none,
                   ),
-                  hintText: "Email or phone number",
+                  hintText: "Gmail",
                   fillColor: const Color.fromRGBO(51, 51, 51, 1),
                   filled: true,
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter some text";
+                    return "Không được để trống";
                   }
                   return null;
                 },
@@ -60,13 +60,13 @@ class LoginView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.0),
                     borderSide: BorderSide.none,
                   ),
-                  hintText: "Password",
+                  hintText: "Mật khẩu",
                   fillColor: const Color.fromRGBO(51, 51, 51, 1),
                   filled: true,
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter some text";
+                    return "Không được để trống";
                   }
                   return null;
                 },
@@ -78,8 +78,6 @@ class LoginView extends StatelessWidget {
                     child: ElevatedButton(
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
-                            // dấu ?: nếu currentState là null thì sẽ ko gây ra lỗi
-                            //print(_emailFieldKey.currentState?.value);
                             if (_formKey.currentState!.validate()) {
                               String email = emailController.text;
                               String password = passwordController.text;
@@ -103,7 +101,7 @@ class LoginView extends StatelessWidget {
                             minimumSize: const Size(0, 50),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8.0))),
-                        child: const Text("Sign In")),
+                        child: const Text("Đăng nhập")),
                   ),
                 ],
               ),
@@ -111,7 +109,7 @@ class LoginView extends StatelessWidget {
               Row(
                 children: [
                   const Text(
-                    "Dont't have account?",
+                    "Chưa có tài khoản?",
                     style: TextStyle(color: Color.fromRGBO(116, 116, 116, 1.0)),
                   ),
                   TextButton(
@@ -119,7 +117,7 @@ class LoginView extends StatelessWidget {
                         Navigator.pushNamed(context, '/signup');
                       },
                       child: const Text(
-                        "Sign up now",
+                        "Đăng kí ngay",
                         style: TextStyle(color: Colors.white),
                       ))
                 ],

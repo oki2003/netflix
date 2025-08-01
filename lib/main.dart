@@ -10,13 +10,12 @@ import "package:netflix/controller/main_controller.dart" show MainController;
 import 'package:netflix/view/profile/takePicture_view.dart';
 import 'package:camera/camera.dart';
 import "package:netflix/view/profile/uploadPicture_view.dart";
-
-// void main() {
-//   runApp(const MyApp());
-// }
+import "package:flutter_dotenv/flutter_dotenv.dart";
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load();
+
   // Obtain a list of the available cameras on the device.
   final cameras = await availableCameras();
 
